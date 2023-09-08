@@ -12,27 +12,30 @@ public class Exercicio001 {
 		// Comentados para Acelerar seu Aprendizado (p. 7). Kindle Edition.
 
 		Locale.setDefault(new Locale("BR"));
-		Scanner leitor = new Scanner(System.in);
+		try (Scanner leitor = new Scanner(System.in)) {
 
-		double primeiroNumero, segundoNumero;
+			double primeiroNumero, segundoNumero;
 
-		System.out.print("Digite o primeiro número: ");
-		primeiroNumero = leitor.nextInt();
+			System.out.print("Digite o primeiro número: ");
+			primeiroNumero = leitor.nextDouble();
 
-		System.out.print("Digite o segundo número: ");
-		segundoNumero = leitor.nextInt();
+			System.out.print("Digite o segundo número: ");
+			segundoNumero = leitor.nextDouble();
 
-		double soma = primeiroNumero + segundoNumero;
-		double subtracao = primeiroNumero - segundoNumero;
-		double multiplicacao = primeiroNumero * segundoNumero;
-		double divisao = primeiroNumero / segundoNumero;
+			double soma = primeiroNumero + segundoNumero;
+			double subtracao = primeiroNumero - segundoNumero;
+			double multiplicacao = primeiroNumero * segundoNumero;
+			double divisao = primeiroNumero / segundoNumero;
 
-		System.out.println();
-		System.out.printf("Adição: %.2f + %.2f = %.2f%n", primeiroNumero, segundoNumero, soma);
-		System.out.printf("Subtração: %.2f - %.2f = %.2f%n", primeiroNumero, segundoNumero, subtracao);
-		System.out.printf("Multiplicação: %.2f * %.2f = %.2f%n", primeiroNumero, segundoNumero, multiplicacao);
-		System.out.printf("Divisão: %.2f / %.2f = %.2f%n", primeiroNumero, segundoNumero, divisao);
+			System.out.println();
+			System.out.printf("Adição: %.2f + %.2f = %.2f%n", primeiroNumero, segundoNumero, soma);
+			System.out.printf("Subtração: %.2f - %.2f = %.2f%n", primeiroNumero, segundoNumero, subtracao);
+			System.out.printf("Multiplicação: %.2f * %.2f = %.2f%n", primeiroNumero, segundoNumero, multiplicacao);
+			System.out.printf("Divisão: %.2f / %.2f = %.2f%n", primeiroNumero, segundoNumero, divisao);
 
-		leitor.close();
+		} catch (Exception e) {
+			System.err.println(
+					"Por favor insira os números de forma válida. Use a vírgula se quiser separar um número de ponto flutuante");
+		}
 	}
 }
