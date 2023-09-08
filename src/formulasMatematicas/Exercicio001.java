@@ -35,7 +35,7 @@ public class Exercicio001 {
 
 		} catch (Exception e) {
 			System.err.println(
-					"Por favor insira os números de forma válida. Use a vírgula se quiser separar um número de ponto flutuante");
+					"Erro: Insira números válidos. Use a vírgula para separar números de ponto flutuante.");
 		}
 	}
 }
